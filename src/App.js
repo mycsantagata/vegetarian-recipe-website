@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Detail from './Detail';
+
+
 
 function App() {
+  const api_key = "db08ea289c5a4294ae9198a0dfe9cebc";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <h1>Vegetarian Recipes</h1>
+      <div className="App">
+        
+        <div className='content'>
+          <Routes>
+            <Route path='/' Component={() => <Home api_key={api_key}/>}/>
+            <Route exact path='/detail/:id' Component={() => <Detail api_key={api_key}/>}/>
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

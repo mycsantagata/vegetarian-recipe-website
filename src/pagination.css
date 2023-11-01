@@ -1,0 +1,51 @@
+/* Stili per ReactPaginate */
+.pagination {
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pagination-page {
+    display: inline-block;
+    margin: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 12px; /* Aggiungi padding per estendere l'area cliccabile */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .pagination-page.active {
+    background-color: #1ee783;
+    color: white;
+  }
+  
+  .previous, .next {
+    display: inline-block;
+    margin: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px 6px; /* Aggiungi padding per estendere l'area cliccabile */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .disabled-page {
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  /* Stili per i punti di sospensione */
+  .break-me {
+    font-size: 16px;
+    margin: 4px;
+    color: #333;
+  }

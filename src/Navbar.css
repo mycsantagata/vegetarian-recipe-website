@@ -1,0 +1,36 @@
+/* Stili per la Navbar */
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #fff; /* Sfondo bianco */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+  }
+  
+  .search-text {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .search-button {
+    background-color: #4CAF50; /* Colore verde */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+  }
+  
+  .search-button:hover {
+    background-color: #388E3C; /* Colore verde più scuro al passaggio del mouse */
+  }
+  
+  /* Personalizza ulteriormente i tuoi stili in base alle tue preferenze */

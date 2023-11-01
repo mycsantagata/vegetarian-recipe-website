@@ -1,0 +1,123 @@
+.recipe-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+  }
+
+.recipe-details {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recipe-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .recipe-details-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+  
+  .recipe-details-item {
+    margin-bottom: 20px;
+  }
+  
+  .recipe-details-item h3 {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .recipe-details-item p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .recipe-details-item ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .recipe-details-item ul li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #525252;
+  }
+
+  .recipe-details-item ul li span{
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
+    
+  }
+  
+  .recipe-details-item ul li::before {
+    content: "•"; /* Utilizza un bullet come separatore */
+    margin-right: 5px;
+  }
+  
+  .recipe-description p{
+    font-size: 16px;
+    margin: 60px 0;
+    color: #333;
+  }
+  
+  .recipe-ingredients ul,
+  .recipe-instructions ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .recipe-instructions{
+    margin-top: 75px;
+  }
+  
+  .recipe-ingredients ul li,
+  .recipe-instructions ul li {
+    font-size: 16px;
+    color: #333;
+    margin: 20px 0; /* Aumenta la distanza verticale tra gli elementi */
+    position: relative; /* Posiziona il segnaposto personalizzato rispetto all'elemento */
+    list-style: none; /* Nasconde il segnaposto predefinito */
+  }
+  
+  .recipe-ingredients ul li::before,
+  .recipe-instructions ul li::before {
+    content: "•"; /* Utilizza un bullet personalizzato */
+    position: absolute;
+    left: -20px; /* Posiziona il pallino a sinistra dell'elemento */
+    font-size: 20px; /* Rendi il pallino più grande */
+    color: #1ee783; /* Colore del pallino */
+    transition: color 0.3s; /* Aggiungi una transizione al cambio di colore */
+  }
+  
+  .recipe-ingredients ul li:hover::before,
+  .recipe-instructions ul li:hover::before {
+    color: #14a158; /* Cambia il colore al passaggio del mouse */
+  }
+
+  .back-button {
+    margin-top: 20px;
+    background-color: #1ee783;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: #15c56a;
+  }
+  

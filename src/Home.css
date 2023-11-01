@@ -1,0 +1,16 @@
+.recipes {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+a {
+    text-decoration: none; /* Rimuove la sottolineatura del link */
+    color: black; 
+  }
+
+  #error{
+    
+    text-align: center;
+  }

@@ -1,0 +1,25 @@
+.recipe {
+  background-color: hsl(0, 0%, 98%);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s; /* Aggiunge una transizione all'effetto di ingrandimento */
+  overflow: hidden; /* Nasconde il contenuto che esce dalla card */
+}
+
+.recipe:hover {
+  transform: scale(1.05); /* Effetto di ingrandimento al passaggio del cursore */
+}
+
+.recipe img {
+  max-width: 100%;
+  height: auto;
+}
+
+.recipe h2 {
+  font-size: 20px; /* Riduci la dimensione del font per evitare che il titolo esca dalla card */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
