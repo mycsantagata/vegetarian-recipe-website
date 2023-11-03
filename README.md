@@ -1,16 +1,33 @@
-# Getting Started with Create React App
+# Vegetarian Recipe Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is built using the React framework, and the libraries used include::
++ React Paginate
++ React Router Dom
++ Axios 
 
-## Available Scripts
+To initialize the project, you need to have NodeJS installed on your computer. After downloading the project, 
+navigate to the project directory in your terminal and run the following command:
+```
+npm install
+```
+This will download all the dependencies. Afterward, you can start the project with:
+```
+npm start
+```
 
-In the project directory, you can run:
+***Note: In case no recipes appear, you need to access the [link](https://spoonacular.com/food-api/docs#Authentication) and 
+follow the documentation. Then, go to 'App.js' and replace the 'api_key' constant with your personal account's API key.***
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is based on a vegetarian recipe website where you can search for your desired recipes and learn more about their 
+nutritional information and preparation methods. You can also access the project at this [link](https://vegetarian-recipe-website.web.app/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Home
+On the home page, you can choose from various recipes provided by the Spoonacular API. 
+You can search for specific recipes using keywords through the search bar.
+
+### Details
+Clicking on one of the desired recipes on the home page takes you to the details page,
+where you'll find more information about the recipe, including nutritional details, ingredients, and more.
+
 
