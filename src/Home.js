@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate';
-import './Recipe.css';
-import './Home.css';
-import './pagination.css';
+import './css/Recipe.css';
+import './css/Home.css';
+import './css/pagination.css';
 
 
 function Home({api_key}) {
@@ -68,32 +68,6 @@ const handlePageClick = ({ selected }) => {
       updateSearch={updateSearch}
       />
     <div className='recipes'>
-      {/*<Link to="/detail">
-    <div className="recipe">
-        <h2>Ricetta 1</h2>
-        <img src='https://blog.giallozafferano.it/neltegamesulfuoco/wp-content/uploads/2017/11/IMG_2500focacciatest-500x385.jpg' alt='' />
-    </div>
-    </Link>
-
-    <div className="recipe">
-        <h2>Ricetta hguifhgy8eyv8evyhuevhguegv8etyve7wfyew79ufyefyefoefyuefyeyfuyf</h2>
-        <img src='https://blog.giallozafferano.it/neltegamesulfuoco/wp-content/uploads/2017/11/IMG_2500focacciatest-500x385.jpg' alt='' />
-    </div>
-
-    <div className="recipe">
-        <h2>Ricetta 1</h2>
-        <img src='https://blog.giallozafferano.it/neltegamesulfuoco/wp-content/uploads/2017/11/IMG_2500focacciatest-500x385.jpg' alt='' />
-    </div>
-
-    <div className="recipe">
-        <h2>Ricetta 1</h2>
-        <img src='https://blog.giallozafferano.it/neltegamesulfuoco/wp-content/uploads/2017/11/IMG_2500focacciatest-500x385.jpg' alt='' />
-    </div>
-
-    <div className="recipe">
-        <h2>Ricetta 1</h2>
-        <img src='https://blog.giallozafferano.it/neltegamesulfuoco/wp-content/uploads/2017/11/IMG_2500focacciatest-500x385.jpg' alt='' />
-    </div>*/}  
       {error != ''? (
     <h2>{error.message}</h2>
   ) : (

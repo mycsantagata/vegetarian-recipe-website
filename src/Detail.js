@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import './Details.css'
+import './css/Details.css'
 import { Link, useParams } from 'react-router-dom'
 
 function Detail({api_key}) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Recipe.css';
+import './css/Recipe.css';
 
 function Recipe({ title, img }) {
   return (

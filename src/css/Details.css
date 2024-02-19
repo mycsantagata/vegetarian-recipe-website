@@ -121,3 +121,8 @@
     background-color: #15c56a;
   }
   
+#error{
+  text-align: center;
+  margin: 0; /* Rimuovi il margine */
+  padding: 0; /* Rimuovi il padding */
+}
