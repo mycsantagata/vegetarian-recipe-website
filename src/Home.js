@@ -1,19 +1,21 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Recipe from './Recipe'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from 'react'; 
 import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate';
 import './css/Recipe.css';
 import './css/Home.css';
 import './css/pagination.css';
-
+import ApiClient from './ApiClient';
+import Loader from './Loader'
+import { Helmet } from 'react-helmet';
 
 function Home({api_key}) {
   
 
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
@@ -23,8 +25,10 @@ function Home({api_key}) {
 
 const getRecipes = async () => {
   try {
-    const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${api_key}&diet=vegetarian&query=${query}`);
-    if(response.data.results == null || response.data.results.length == 0){
+    setLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    const response = await ApiClient.getRecipes(query, api_key);
+    if(response.data.results == null || response.data.results.length === 0){
       throw Error('No results found');
     }
     const startIndex = currentPage * perPage;
@@ -36,6 +40,8 @@ const getRecipes = async () => {
     console.log(error);
       setError(error);
 
+  } finally{
+    setLoading(false);
   }
 }
 
@@ -61,23 +67,33 @@ const handlePageClick = ({ selected }) => {
 };
 
   return (
+    
   <div className='home'>
+    <Helmet>
+    <title>Vegetarian Recipes</title>
+    </Helmet>
       <Navbar 
       search={search}
       getSearch={handleSearch}
       updateSearch={updateSearch}
       />
-    <div className='recipes'>
-      {error != ''? (
-    <h2>{error.message}</h2>
-  ) : (
-    slicedRecipes.map(recipe => (
-      <Link to={`/detail/${recipe.id}`} key={recipe.id}>
-        <Recipe key={recipe.id} title={recipe.title} img={recipe.image} />
-      </Link>
-    ))
-  )}
-    </div>
+
+      {loading ? ( <Loader/>
+        ): (
+        <>
+          <div className='recipes'>
+          {error !== ''? (
+            <h2>{error.message}</h2>
+          ) : (
+            slicedRecipes.map(recipe => (
+              <Link to={`/detail/${recipe.id}`} key={recipe.id}>
+                <Recipe key={recipe.id} title={recipe.title} img={recipe.image} />
+              </Link>
+          ))
+        )}
+          </div>
+      </>)
+      }
 
 <ReactPaginate
         activeClassName={'active '}
